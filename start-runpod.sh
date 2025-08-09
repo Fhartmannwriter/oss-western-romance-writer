@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+
 # -------- CONFIG FROM ENV (with defaults for first boot) --------
 : "${MODEL_ID:=Qwen/Qwen2-7B-Instruct}"
 : "${TENSOR_PARALLEL_SIZE:=1}"
