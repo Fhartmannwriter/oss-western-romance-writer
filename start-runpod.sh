@@ -4,11 +4,15 @@ set -euo pipefail
 echo "[GPU] Checking..."
 nvidia-smi || { echo "[ERROR] No GPU detected"; exit 1; }
 
-echo "[CLEAN] Removing /workspace/app"
+# ALWAYS move to a safe dir first
+cd /                                  # <— important
+echo "[DIR] Now in: $(pwd)"
+
+echo "[CLEAN] Preparing /workspace"
 mkdir -p /workspace
 rm -rf /workspace/app
 
-echo "[GIT] Cloning..."
+echo "[GIT] Cloning repo..."
 git clone https://github.com/fhartmannwriter/oss-western-romance-writer.git /workspace/app
 
 cd /workspace/app
