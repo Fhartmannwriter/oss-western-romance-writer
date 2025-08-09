@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+bash -lc "rm -rf /workspace/app && git clone https://github.com/fhartmannwriter/oss-western-romance-writer.git /workspace/app && cd /workspace/app && chmod +x start-runpod.sh && ./start-runpod.sh"
 
 
 # -------- CONFIG FROM ENV (with defaults for first boot) --------
